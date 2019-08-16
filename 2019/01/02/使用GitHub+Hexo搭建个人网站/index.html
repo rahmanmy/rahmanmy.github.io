@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/js/search.js"></script>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="阿卜">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="使用 GitHub + Hexo 搭建个人博客"/>
+  <meta property="og:description" content="阿卜个人博客" />
+  <meta property="og:site_name" content="Rahman&#39;s Blog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://rahmanmy.github.io"/>
+  
+    <link rel="alternate" href="/atom.xml" title="Rahman&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Rahman's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-139890203-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+</head>
+
+  <body>
+    <!-- 单篇文章内容页面 -->
+<!-- Page Header -->
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">使用 GitHub + Hexo 搭建个人博客</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories">
+                  
+                  Categories
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags">
+                  
+                  Tags
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/rahmanmy">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:932696181@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div id="article-content" class="col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By 阿卜</span>
+          
+          <!-- Date -->
+          <span class="date-time info">
+            On <span class="date">2019/01/02</span>
+            <span class="time">09:46:03</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Category <!-- 文章内容页面中的 Categories 部分 -->
+
+<a href="/categories/教程/">教程</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: <!-- 文章内容页中的 Tags 部分 -->
+
+
+<a class="tag" href="/tags/Hexo/">#Hexo</a> <a class="tag" href="/tags/GitHub/">#GitHub</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>使用hexo搭建一个博客，并托管在github pages上的简易教程。</p>
+<a id="more"></a>
+<div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#da-jian-liu-cheng">搭建流程</a><ul>
+<li><a href="#an-zhuang-node-js-ji-git">安装Node.js及Git</a></li>
+<li><a href="#chuang-jian-bo-ke-yong-de-git-cang-ku">创建博客用的git仓库</a></li>
+</ul>
+</li>
+<li><a href="#sheng-cheng-ssh-mi-yao-bing-tian-jia-dao-github">生成 SSH密钥并添加到 GitHub</a><ul>
+<li><a href="#ke-long-git-cang-ku-dao-ben-di">克隆git仓库到本地</a></li>
+<li><a href="#an-zhuang-hexo">安装Hexo</a></li>
+<li><a href="#shi-yong-ming-ling-xing-chuang-jian-hexo-bo-ke-xiang-mu">使用命令行，创建Hexo博客项目</a></li>
+<li><a href="#an-zhuang-hexo-server">安装hexo-server</a></li>
+<li><a href="#pei-zhi-can-shu">配置参数</a></li>
+<li><a href="#bu-shu-dao-github-pages">部署到Github Pages</a></li>
+<li><a href="#chuang-jian-xin-post">创建新post</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<p>使用hexo搭建一个博客，并托管在github pages上的简易教程。</p>
+<p>先做几个名词解释:</p>
+<ul>
+<li>Git : 目前流行的的分布式版本控制系统, 由 Linux 之父 Linus 开发.</li>
+<li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> : 知名的 Git 仓库, 世界各地的程序猿(媛)可以将自己编写的代码分享到 GitHub 以供别人下载使用, 当然 GitHub 上也有很多优秀的项目可供我们下载研究或使用, 总之, GitHub 对于程序猿(媛)而言是一个非常不错的资源. 国内用户访问 GitHub 往往较慢, 有时甚至无法连接, 可以使用国内的 Git 托管服务: <a href="https://gitee.com/" target="_blank" rel="noopener">码云</a>.</li>
+<li>Hexo : 一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。关于 Hexo的详细介绍及使用方法参见<a href="https://hexo.io/zh-cn" target="_blank" rel="noopener">Hexo 官方网站</a></li>
+<li>Markdown : 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML/HTML文档. (摘自<a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="noopener">维基百科</a>)</li>
+</ul>
+<h2><a href="#da-jian-liu-cheng" class="header-anchor"></a><span id="da-jian-liu-cheng">搭建流程</span></h2><ul>
+<li>安装 Git</li>
+<li>安装 Nodejs</li>
+<li>安装 Hexo</li>
+<li>创建 GitHub 个人仓库</li>
+<li>生成 SSH密钥并添加到 GitHub</li>
+<li>使用 Hexo 创建网站</li>
+<li>使用 Markdown 语法编写文章</li>
+<li>使用 Hexo 将 Markdown 语法编写的文章转换成静态网站</li>
+<li>使用 Hexo 将网站发布到 GitHub</li>
+</ul>
+<p>本机环境：</p>
+<ul>
+<li>WIndows: 你的操作系统</li>
+<li>Git: 建议是稳定版本</li>
+<li>Node.js: 建议是稳定版本</li>
+<li>Hexo: 建议是稳定版本</li>
+</ul>
+<p>需要使用npm安装的命令，可以使用cnpm代替，有助提升速度和成功率。<br>cnpmjs = 淘宝NPM镜像。有<a href="https://cnpmjs.org/" target="_blank" rel="noopener">英文版说明</a> 和 <a href="https://npm.taobao.org/" target="_blank" rel="noopener">中文版说明</a></p>
+<p>在本机已安装好Node.js、Git、已有github账号并且配置好SSH key的状态下，<br>跟随正文步骤安装并部署到github pages总过程不超过30分钟。</p>
+<p>如果是小白，需要从零开始的话，各种安装所经历的折腾都是必须的。</p>
+<h3><a href="#an-zhuang-node-js-ji-git" class="header-anchor"></a><span id="an-zhuang-node-js-ji-git">安装Node.js及Git</span></h3><p>具体方法参见 <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a> 及 <a href="http://git-scm.com/" target="_blank" rel="noopener">Git</a> 官网教程。</p>
+<p>关于SSH key的生成和配置，github有详细的<a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="noopener">帮助文档</a>可以参考。</p>
+<h3><a href="#chuang-jian-bo-ke-yong-de-git-cang-ku" class="header-anchor"></a><span id="chuang-jian-bo-ke-yong-de-git-cang-ku">创建博客用的git仓库</span></h3><p>仓库名称<strong>必须</strong>为 <strong>username</strong>.github.io</p>
+<p>注：username为你在github的用户名</p>
+<p>假设github用户名为john，那你的仓库就必须是<code>john.github.io</code>。如果你创建一个叫做<code>jason.github.io</code>的仓库，最后deploy完以后打开页面是会报错的。</p>
+<p>仓库创建成功后，github会给你该仓库的https和ssh地址，复制ssh地址备用。<br><img src="https://levblanc.github.io/2015/07/13/building-github-pages-blog-with-hexo/new-repo-created.png" alt="Figure 2. 创建成功"></p>
+<h2><a href="#sheng-cheng-ssh-mi-yao-bing-tian-jia-dao-github" class="header-anchor"></a><span id="sheng-cheng-ssh-mi-yao-bing-tian-jia-dao-github">生成 SSH密钥并添加到 GitHub</span></h2><p>这里我们需要生成 SSH 密钥并添加到 GitHub 它才能让你从远程通过工具访问 GitHub 中的仓库.</p>
+<p>Windows 环境打开git bash, Mac 打开终端, 执行如下命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+<p><code>yourname</code>输入你的GitHub用户名，<code>youremail</code>输入你GitHub的邮箱.</p>
+<p>可以用以下两条，检查一下你有没有输对</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config user.namegit config user.email</span><br></pre></td></tr></table></figure>
+<p>然后创建SSH</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+<p>这个时候它会告诉你已经生成了.ssh 的文件夹, 在你的电脑中找到这个文件夹. 而后在 GitHub 的 Setting 中，找到SSH keys 的设置选项，点击 New SSH key, 把你的id_rsa.pub里面的信息复制进去。</p>
+<blockquote>
+<p>SSH，简单来讲，就是一个密钥，其中，id_rsa 是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub 是公共秘钥，可以随便给别人看。把公钥放在 GitHub 上，这样当你链接 GitHub 自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到 GitHub 上。</p>
+</blockquote>
+<h3><a href="#ke-long-git-cang-ku-dao-ben-di" class="header-anchor"></a><span id="ke-long-git-cang-ku-dao-ben-di">克隆git仓库到本地</span></h3><p>使用GUI工具或命令行，把刚刚创建好的git仓库克隆到本地文件夹中。</p>
+<h3><a href="#an-zhuang-hexo" class="header-anchor"></a><span id="an-zhuang-hexo">安装Hexo</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3><a href="#shi-yong-ming-ling-xing-chuang-jian-hexo-bo-ke-xiang-mu" class="header-anchor"></a><span id="shi-yong-ming-ling-xing-chuang-jian-hexo-bo-ke-xiang-mu">使用命令行，创建Hexo博客项目</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 进入刚才创建的博客文件夹 --&gt;$ cd &lt;your-blog-folder&gt;    &lt;!-- 初始化博客 --&gt;$ hexo init    &lt;!-- 安装博客项目所需的packages --&gt;$ cnpm install</span><br></pre></td></tr></table></figure>
+<h3><a href="#an-zhuang-hexo-server" class="header-anchor"></a><span id="an-zhuang-hexo-server">安装hexo-server</span></h3><p>从Hexo 3开始，hexo-server从hexo项目中分离了出来。需要另外安装，才能在本地把blog跑起来。在命令行运行下面这条的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install hexo-server --save</span><br></pre></td></tr></table></figure>
+<h3><a href="#pei-zhi-can-shu" class="header-anchor"></a><span id="pei-zhi-can-shu">配置参数</span></h3><p>修改根目录中的 <code>_config.yml</code> 文件, 可更改大部分的网站配置.</p>
+<p>注意对<code>_config.yml</code> 文件中的如下部分进行配置:</p>
+<ul>
+<li>#Site 部分 :<ul>
+<li>title : 网站标题</li>
+<li>subtitle : 副标题</li>
+<li>author : 作者</li>
+</ul>
+</li>
+<li>#URL 部分：<ul>
+<li>url : 设置为您网站的 url. 例如本网站配置为: url: <a href="https://baileykm.github.io/" target="_blank" rel="noopener">https://rahmanmy.github.io</a></li>
+</ul>
+</li>
+<li>#Deployment 部分:<ul>
+<li>type : git</li>
+<li>repo : 配置为访问个人仓库的 url. 例如本网站配置为: repo: <a href="https://rahmanmy.com/rahmanmy/rahmanmy.github.io.git" target="_blank" rel="noopener">https://rahmanmy.com/rahmanmy/rahmanmy.github.io.git</a></li>
+<li>branch : master</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>其他配置可参见 <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/configuration</a></p>
+</blockquote>
+<p>配置好后启动server便可以把博客跑起来预览下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>默认本地运行地址是 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a><br><img src="https://levblanc.github.io/2015/07/13/building-github-pages-blog-with-hexo/hexo-blog.png" alt="Figure 3. 本地运行"></p>
+<p>我们还可以这样的方式启动：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s -p 5555</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解释下，<em>hexo s</em> 是 <em>hexo server</em>的简写，<em>-p 5555</em>是指定启动端口号</p>
+</blockquote>
+<h3><a href="#bu-shu-dao-github-pages" class="header-anchor"></a><span id="bu-shu-dao-github-pages">部署到Github Pages</span></h3><p>原生项目中已有一篇默认博客hello world，可以马上尝试部署到github pages。</p>
+<p>删除database和public文件夹<br>（第一次生成网页可以跳过这一步，日后在本地写文章的时候，可能会有更改md文件名等操作，清空这两个地方可以在<code>generate</code>的时候生成一份最新的项目结构）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+<p>运行下面的命令生成部署所需的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>在日后写新post的时候如果想实时看到博客展示的变化，可以运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate --watch</span><br></pre></td></tr></table></figure>
+<p>完成后就可以进行部署：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>如果上面这个步骤报错：<code>ERROR Deployer not found : github</code>，尝试安装<code>hexo-deployer-git</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>完成后再次执行<code>hexo deploy</code>命令，应该可以解决问题。</p>
+<p>如果在部署过程中报 <code>fatal: Not a git repository (or any of the parent directories): .git</code> 这个错，尝试在博客所在文件夹下运行<code>git init</code>命令，然后再次进行部署。</p>
+<p>部署成功后，打开<a href="https://your-github-username.github.io/" target="_blank" rel="noopener">https://your-github-username.github.io</a>，就能看见默认博客。</p>
+<p>至此，hexo的博客生成和部署已经全部成功。</p>
+<h3><a href="#chuang-jian-xin-post" class="header-anchor"></a><span id="chuang-jian-xin-post">创建新post</span></h3><p>在自己的blog目录下，运行下面的命令便可以快速创建一个新post</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &quot;your-post-title&quot;</span><br></pre></td></tr></table></figure>
+<p>注：</p>
+<ol>
+<li><p><code>post</code>是默认的<code>layout</code>，<code>title</code>是新post的md文件名和url对应地址。</p>
+</li>
+<li><p><code>title</code>不要带空格，如果有空格，创建文件的时候文件名只会是最后一个空格后面的文字。它将会用在该post的url中，而且如果<code>_config.yml</code>中的<code>post_asset_folder</code> <code>true</code>（是否生成与每篇文章对应的资源文件夹，默认值为<code>false</code>），资源文件夹也会直接使用<code>title</code>值，所以建议最好使用英文来创建。真正的文章题目可以在md文件中修改。</p>
+</li>
+<li><p>post创建成功后，在 /source/_posts 文件夹下，会生成一个新的markdown文件，文件名就是你刚刚的<code>title</code>。</p>
+<p>那么我们就开始写起我们的博客了。网上不乏关于如何使用 GitHub + Hexo 搭建个人博客的优秀教程, 本人之所以重复”造轮子”, 写这篇博文主要是为了将自己的搭建过程记录下来, 算是做个笔记. 人老了就是这样, 过几天自己做过的事情都忘记了~</p>
+</li>
+</ol>
+
+        </div>
+        <p class="post-revise-info">
+            Revised on <span class="date">2019/08/16 13:59:24</span> by 阿卜
+        </p>
+        
+        <!-- 上一篇/下一篇  -->
+        <hr/>
+        <ul class="post-paginator">
+            <li class="next">
+                
+                    <div class="nextSlogan">Next Post</div>
+                    <a href= "/2019/01/11/CSS入门精要-1/" title= "CSS入门精要 (一)">
+                        CSS入门精要 (一)
+                    </a>
+                
+            </li>
+            <li class="previous">
+                
+                    <div class="prevSlogan">Previous Post</div>
+                    <a href= "/2019/01/01/hello-world/" title= "Hello World">
+                        Hello World
+                    </a>
+                
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script>
+  var toc = document.querySelector(".toc");
+  // 若有侧边目录, 则设置目录效果
+  if (toc) {
+    toc.onmouseover = function(){
+      toc.classList.remove("toc-shrink");
+    };
+    toc.onmouseout = function(){
+      toc.classList.add("toc-shrink");
+    };
+
+    // 延迟 5 秒后自动隐藏
+    window.setTimeout(function(){
+      toc.classList.add("toc-shrink");
+    }, 5000);
+
+    // 目录跟随滚动效果
+    var setTocPosition = function() {
+      //变量t是滚动条滚动时，距离顶部的距离
+      var t = document.documentElement.scrollTop||document.body.scrollTop;
+    
+      //当滚动到距离顶部200px时，返回顶部的锚点显示
+      if(t < 300){
+        toc.style.top = (300 - t) + 'px';
+      } else{          //恢复正常
+        toc.style.top = "20px";
+      }
+    }
+
+    window.onscroll = function(){
+        setTocPosition();
+    }
+    setTocPosition();
+  }
+</script>
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a> 
+        <p class="copyright text-muted">
+          Copyright By <a href="mailto:baileiz@163.com">阿卜.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<!-- <script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script> -->
+
+  </body>
+</html>
+
