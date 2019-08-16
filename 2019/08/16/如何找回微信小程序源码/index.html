@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/js/search.js"></script>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="阿卜">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="如何找回微信小程序源码？2019年微信小程序反编译最新教程"/>
+  <meta property="og:description" content="阿卜个人博客" />
+  <meta property="og:site_name" content="Rahman&#39;s Blog"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://rahmanmy.github.io"/>
+  
+    <link rel="alternate" href="/atom.xml" title="Rahman&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Rahman's Blog</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-139890203-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+</head>
+
+  <body>
+    <!-- 单篇文章内容页面 -->
+<!-- Page Header -->
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">如何找回微信小程序源码？2019年微信小程序反编译最新教程</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories">
+                  
+                  Categories
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags">
+                  
+                  Tags
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/rahmanmy">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:932696181@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div id="article-content" class="col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By 阿卜</span>
+          
+          <!-- Date -->
+          <span class="date-time info">
+            On <span class="date">2019/08/16</span>
+            <span class="time">09:46:03</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Category <!-- 文章内容页面中的 Categories 部分 -->
+
+<a href="/categories/微信小程序/">微信小程序</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: <!-- 文章内容页中的 Tags 部分 -->
+
+
+<a class="tag" href="/tags/微信小程序/">#微信小程序</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>【本教程仅提供学习，不得做破坏等不文明事情，一旦发现自己负责。未经许可不得转载，若转载标明出处。】使用node.js获取微信小程序源码简易教程。本教程去年写的，今天把它放在自己的博客！！</p>
+<a id="more"></a>
+<div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#jin-tian-dian-nao-chu-wen-ti-yi-qian-xie-de-wei-xin-xiao-cheng-xu-yuan-dai-ma-diu-shi-liao-bei-ju-a"><strong>今天电脑出问题，以前写的微信小程序源代码丢失了，悲剧啊！！</strong></a></li>
+</ul>
+<!-- tocstop -->
+<p></div><br>若想看最新变化请看此文章<a href="https://blog.csdn.net/Rahman510/article/details/88385027" target="_blank" rel="noopener">https://blog.csdn.net/Rahman510/article/details/88385027</a></p>
+<h1><a href="#jin-tian-dian-nao-chu-wen-ti-yi-qian-xie-de-wei-xin-xiao-cheng-xu-yuan-dai-ma-diu-shi-liao-bei-ju-a" class="header-anchor"></a><span id="jin-tian-dian-nao-chu-wen-ti-yi-qian-xie-de-wei-xin-xiao-cheng-xu-yuan-dai-ma-diu-shi-liao-bei-ju-a"><strong>今天电脑出问题，以前写的微信小程序源代码丢失了，悲剧啊！！</strong></span></h1><p>然后就找各种办法数据恢复，但是种种原因恢复不过来了。。。。。。。凉凉。。。。。。</p>
+<p><strong>继续想解决办法，结果呢想到了反编译，对，就这样反编译！</strong></p>
+<p><strong>先看下最终结果吧</strong></p>
+<p><strong><img src="https://img-blog.csdnimg.cn/20190310223225499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JhaG1hbjUxMA==,size_16,color_FFFFFF,t_70" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></strong></p>
+<p>找了下大神写的反编译工具，先给地址：<a href="https://github.com/qwerty472123/wxappUnpacker" target="_blank" rel="noopener">wxappUnpacker</a>点击就可以去下载工具；</p>
+<p>记得要安装最新版本的node.js哦</p>
+<p>使用模拟器或者越狱的苹果手机，获得root权限的安卓手机来抓取wxapkg包</p>
+<p>我的是使用苹果手机来抓取包的，需要越狱。这里就不多说了，直接放图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190310223142848.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JhaG1hbjUxMA==,size_16,color_FFFFFF,t_70" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>使用反编译脚本解包 wxapkg</p>
+<ul>
+<li><p>● 到这里你应该已经将反编译脚本从github下载 或者 clone 到本地某个目录</p>
+</li>
+<li><p>● 打开nodejs命令窗口，按住shift+右击</p>
+</li>
+<li><p>● cd 到你clone或者下载好的反编译脚本目录下</p>
+</li>
+<li><p>● 在node命令窗口中依次安装如下依赖（当然，你也可以选择-g全局安装）：</p>
+</li>
+</ul>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- 1、npm install esprima*</span><br><span class="line">- *2、npm install css-tree*</span><br><span class="line">- *3、npm install cssbeautify*</span><br><span class="line">- *4、npm install vm2*</span><br><span class="line">- *5、npm install uglify-es*</span><br><span class="line">- *6、npm install js-beautify</span><br></pre></td></tr></table></figure>
+<p>  *</p>
+<ul>
+<li><p>● 安装好依赖之后，就是最后一步了，反编译 .wxapkg 文件</p>
+</li>
+<li><p>在当前目录下输入 node wuWxapkg.js [-d] //files 就是你想要反编译的文件名 例如：我有一个需要反编译的文件 1.wxapkg 已经解压到了C盘根目录下,那么就输出命令 node wuWxapkg.js C:\1.wxapkg</p>
+</li>
+</ul>
+<p>按照描述进行了反编译，奇迹发生了，果然反编译成功了，但是一跑起来就出问题了，wxcc文件成了.html文件，</p>
+<p>而且发现反编译的时候报错了；错误图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190310221409686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JhaG1hbjUxMA==,size_16,color_FFFFFF,t_70" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>不知道咋弄，继续网上搜解决办法，结果没找到。最后想放弃去某宝花钱。去问了一个店铺，我把我遇到的问题给店主描述了下，说要花80元给我搞定。花钱是值得的，但是呢我还是不服气，既然编译了，那得自己尝试么，对吧，然后我问店主，我出现的问题在哪里，店主说github上的有问题，最新的没更新，我这里有新的，300元我给你，我去，你这个也太坑了吧，300元把人家工具给我。我就直接不理他了。</p>
+<p>休息下。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。</p>
+<p>然后我把ReferenceError: $gwx is not defined问题谷歌上一搜出来了解决办法，有的到一半就要钱，有的还不全，咋办呢，继续搜，最后在知乎上找到一个wuWxx.js需要修改的代码，提地址：<a href="https://zhuanlan.zhihu.com/p/56056561，没删之前赶紧去看看。果然把这个js修改，成功编译到以前的代码，虽然有些变动，但是大部分都正常。" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/56056561，没删之前赶紧去看看。果然把这个js修改，成功编译到以前的代码，虽然有些变动，但是大部分都正常。</a></p>
+<p>修改部分代码：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190310222355975.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>需要源码或者需要编译指导可以联系我！！第一次写博客，望大家多多支持，谢谢！</p>
+<p>心得就是：动手尝试—————————</p>
+<p>以下为其他大神今年研究的教程，值得参考</p>
+<p>仅供参考</p>
+<p><img src="https://img-blog.csdnimg.cn/20190730154231467.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RobmF0ZTY3OA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>微信小程序反编译截图1<br><img src="https://img-blog.csdnimg.cn/20190730154324740.png" alt="在这里插入图片描述"><br>微信小程序反编译截图2<br><strong>—– 常见的微信小程序反编译失败问题 —–</strong><br>1 获取不到Wxss<br>2 遇见分包，无法反编译。<br>3 apkg反编译报错。 ( 目前都已解决）</p>
+<p><strong>准备工具</strong><br>1 node.js 运行环境<br>如果没有安装nodejs，请先安装一下下载地址：<a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a><br>2.反编译的脚本<br>在网上找的大神写的node.js版本的地址：<a href="https://github.com/qwerty472123/wxappUnpacker" target="_blank" rel="noopener">https://github.com/qwerty472123/wxappUnpacker</a><br>3.夜神模拟器需要安装微信和QQ<br>地址：<a href="https://www.yeshen.com/cn/download/fullPackage" target="_blank" rel="noopener">https://www.yeshen.com/cn/download/fullPackage</a></p>
+<p><strong>接下来正式开始反编译</strong><br>1 获取小程序pkg包：<br>在模拟器中登录微信，随便打开一个小程序A<br>打开文件管理器，找到/data/data/com.tencent.mm/MicroMsg 目录 ，然后找到一个很长的用户随机码<br>继续找到/appbrand/pkg/xxx，接下来会出现小程序A的wxapkg包<br><img src="https://img-blog.csdnimg.cn/20190730154827909.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RobmF0ZTY3OA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>2 压缩apkg包，然后长按发送到QQ，微信暂不支持发送。<br>3 到此我们获取到了小程序的包 ，打开node.js , 路径切换到我们下载的反编译脚本的目录，如图<br><img src="https://img-blog.csdnimg.cn/20190730154857738.png" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/2019073015490836.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RobmF0ZTY3OA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>提示: ( 路径不要包含中文名称，否则反编译时可能因编码不对 造成异常 )</p>
+<p>4 切换到反编译脚本的目录后 ，在node命令窗口中依次安装以下依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install esprima</span><br><span class="line">npm install css-tree</span><br><span class="line">npm install cssbeautify</span><br><span class="line">npm install vm2</span><br><span class="line">npm install uglify-es</span><br><span class="line">npm install js-beautify</span><br><span class="line">npm install escodegen -g</span><br></pre></td></tr></table></figure>
+<p><strong>下面讲解需要更改的源码和操作步骤</strong>：这时可能会报一个错误<br>【找不到escodegen模块】、莫紧张 , 否则容易秃头…<br>运行如下命令：npm i –save-dev escodegen<br>然后执行反编译命令 node wuWxapkg.js D:\test\1.wxapkg<br>.wxapk<br>已经解压到了D盘根目录下, 这时已经解压到了wxapkg的存放目录。<br>部分小程序反编译，会丢失wxss文件，也就是关键的样式文件。</p>
+
+        </div>
+        <p class="post-revise-info">
+            Revised on <span class="date">2019/08/16 14:40:46</span> by 阿卜
+        </p>
+        
+        <!-- 上一篇/下一篇  -->
+        <hr/>
+        <ul class="post-paginator">
+            <li class="next">
+                
+            </li>
+            <li class="previous">
+                
+                    <div class="prevSlogan">Previous Post</div>
+                    <a href= "/2019/05/14/实例教程-在线账本-3/" title= "实例教程 - 在线账本 (三)">
+                        实例教程 - 在线账本 (三)
+                    </a>
+                
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script>
+  var toc = document.querySelector(".toc");
+  // 若有侧边目录, 则设置目录效果
+  if (toc) {
+    toc.onmouseover = function(){
+      toc.classList.remove("toc-shrink");
+    };
+    toc.onmouseout = function(){
+      toc.classList.add("toc-shrink");
+    };
+
+    // 延迟 5 秒后自动隐藏
+    window.setTimeout(function(){
+      toc.classList.add("toc-shrink");
+    }, 5000);
+
+    // 目录跟随滚动效果
+    var setTocPosition = function() {
+      //变量t是滚动条滚动时，距离顶部的距离
+      var t = document.documentElement.scrollTop||document.body.scrollTop;
+    
+      //当滚动到距离顶部200px时，返回顶部的锚点显示
+      if(t < 300){
+        toc.style.top = (300 - t) + 'px';
+      } else{          //恢复正常
+        toc.style.top = "20px";
+      }
+    }
+
+    window.onscroll = function(){
+        setTocPosition();
+    }
+    setTocPosition();
+  }
+</script>
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a> 
+        <p class="copyright text-muted">
+          Copyright By <a href="mailto:baileiz@163.com">阿卜.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<!-- <script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script> -->
+
+  </body>
+</html>
+
