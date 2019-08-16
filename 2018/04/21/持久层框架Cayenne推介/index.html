@@ -151,7 +151,7 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>说起持久层框架, Hibernate 和 mybatis (早期版本名为 ibatis) 应该不少人都听过或使用过, 虽然无从考证上述两个持久层框架的市场份额, 但在国内应算是较为流行的两个框架. 本文推荐另一系出名门  ( The Apache Software Foundation ) 的持久层框架 Cayenne, 经过本人在几个项目中的试用, 个人觉得不错.</p>
+          <p>本教程出自于<a href="https://baileykm.github.io" target="_blank" rel="noopener">白师傅</a>、<br>说起持久层框架, Hibernate 和 mybatis (早期版本名为 ibatis) 应该不少人都听过或使用过, 虽然无从考证上述两个持久层框架的市场份额, 但在国内应算是较为流行的两个框架. 本文推荐另一系出名门  ( The Apache Software Foundation ) 的持久层框架 Cayenne, 经过本人在几个项目中的试用, 个人觉得不错.</p>
 <a id="more"></a>
 <p>大名鼎鼎的 Hibernate 可能是很多人接触的第一个持久层框架. 它与Struts、 Spring 组成的SSH组合对于程序猿而言就如偶像团体SHE对于追星族般如雷贯耳. 介绍Hibernate的书籍和资料几乎已经到了泛滥成灾的地步. 本人也曾在多个项目中使用过Hibernate, 其强大的功能确实为程序开发带来了不少便利. 找一本入门的书或网上下载一个入门教程, 跟随教程的步骤相信运行起一个简单的例程估计不是什么大问题, 但随着项目复杂度的增加, 配置和使用也同样变得复杂, 偶尔可能还需要应用一些性能优化方面的”技巧”. 面对如此庞大的框架, 不经意间抛出的运行时异常着实让人无从下手.<br>另一持久层框架:mybatis 同样也拥有不少粉丝, 本人也一度是其拥趸者. 相对于Hibernate, 其拥有另一种风格的配置和使用方式, 但面对那密密麻麻的XML配置文件, 以及事必躬亲的查询配置, 本人开始犯懒了…… 当然, 一些配套的工具或插件可以帮我们干不少繁重的工作, 也许还有一些优秀的辅助工具本人未尝见识, 不敢枉加评论.<br>说了这么多, 并无贬低上述两个持久层框架的意思, 无论什么工具总有其优缺点, 《人月神话》中有句话叫做“没有银弹”, 这里只是想向大家介绍一个我认为被国人雪藏的优秀持久层框架: Cayenne. (至少就相关的文档和教程而言, 相对前两个框架要少得多)<br>, 初步使用后有些体会, 仅供参考.</p>
 <h1><a href="#guan-yu-pei-zhi" class="header-anchor"></a><span id="guan-yu-pei-zhi">关于配置</span></h1><p>配置文件与Hibernate和mybatis类似, 使用XML文件(Hibernate也支持注解方式配置), 里面虽然也是令人头大的密密麻麻的映射关系说明, 但官方提供了可视化的建模工具CayenneModeler, 可自动生成XML配置文件和Java持久层的实体类. 此工具支持数据库反向工程(根据已有的数据库提取表/视图结构和外键关系, 自动生成映射文件), 同样也支持在建模工具中直接创建数据模型后将表和关系生成到数据库中. 这个工具还是比较强大的, 至少在目前本人实践的几个小项目中很少出现需要手动去修改XML文档的情况.</p>
@@ -186,12 +186,12 @@
 <blockquote>
 <p>提供2个学习材料: </p>
 <p>[1] <a href="http://cayenne.apache.org" target="_blank" rel="noopener">Cayenne官方网站</a>, 里面有Tutorial, Guide 等最权威的文档.</p>
-<p>[2] <a href="https://baileykm.github.io/2018/04/21/Cayenne%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">Cayenne入门指南</a>, 本人翻译自<a href="https://cayenne.apache.org/docs/3.1/getting-started-guide/" target="_blank" rel="noopener">Cayenne官方入门教程(Cayenne Getting Started Guide)</a></p>
+<p>[2] <a href="https://baileykm.github.io/2018/04/21/Cayenne%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener">Cayenne入门指南</a>, 本人翻译自<a href="https://cayenne.apache.org/docs/3.1/getting-started-guide/" target="_blank" rel="noopener">Cayenne官方入门教程(Cayenne Getting Started Guide)</a></p>
 </blockquote>
 
         </div>
         <p class="post-revise-info">
-            Revised on <span class="date">2019/05/10 22:24:59</span> by 阿卜
+            Revised on <span class="date">2019/08/16 14:12:00</span> by 阿卜
         </p>
         
         <!-- 上一篇/下一篇  -->
