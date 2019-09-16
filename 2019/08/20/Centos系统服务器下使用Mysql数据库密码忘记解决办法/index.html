@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="阿卜">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="Linux安装Mysql数据库"/>
+  <meta property="og:title" content="Centos服务器下Mysql数据库忘记密码解决办法"/>
   <meta property="og:description" content="阿卜个人博客" />
   <meta property="og:site_name" content="Rahman&#39;s Blog"/>
   <meta property="og:type" content="article" />
@@ -55,7 +55,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Linux安装Mysql数据库</p>
+          <p class="title">Centos服务器下Mysql数据库忘记密码解决办法</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -128,7 +128,7 @@
           <!-- Date -->
           <span class="date-time info">
             On <span class="date">2019/08/20</span>
-            <span class="time">20:27:08</span>
+            <span class="time">21:50:08</span>
           </span>
           
           <!--  Categories  -->
@@ -157,41 +157,27 @@
 
 <!-- toc -->
 <ul>
-<li><a href="#xia-zai-mysql-an-zhuang-bao">下载MySql安装包</a></li>
-<li><a href="#an-zhuang-mysql-yuan">安装MySql源</a></li>
-<li><a href="#jian-cha-mysql-yuan-shi-fou-an-zhuang-cheng-gong">检查MySql源是否安装成功</a></li>
-<li><a href="#kai-shi-an-zhuang-mysql">开始安装MySql</a></li>
-<li><a href="#qi-dong-mysql-fu-wu-qi">启动MySql服务器</a></li>
-<li><a href="#jian-cha-mysql-qi-dong-zhuang-tai">检查MySql启动状态</a></li>
-<li><a href="#she-ji-sui-ji-xi-tong-kai-ji-qi-dong">设计随机系统开机启动</a></li>
-<li><a href="#cha-kan-mysql-mo-ren-mi-ma">查看MySql默认密码</a></li>
-<li><a href="#hou-ji">后记</a></li>
+<li><a href="#fang-fa-yi-tong-guo-chu-shi-mi-ma">方法一：通过初始密码</a></li>
+<li><a href="#fang-fa-er-shi-yong-cao-zuo-xi-tong">方法二：使用操作系统</a></li>
+<li><a href="#fang-fa-san-qiang-zhi-jin-xing-xiu-gai-mi-ma">方法三：强制进行修改密码</a></li>
 </ul>
 <!-- tocstop -->
 </div>
 
-<h3><a href="#xia-zai-mysql-an-zhuang-bao" class="header-anchor"></a><span id="xia-zai-mysql-an-zhuang-bao">下载MySql安装包</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm</span><br></pre></td></tr></table></figure>
-<h3><a href="#an-zhuang-mysql-yuan" class="header-anchor"></a><span id="an-zhuang-mysql-yuan">安装MySql源</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; yum localinstall mysql57-community-release-el7-8.noarch.rpm</span><br></pre></td></tr></table></figure>
-<h3><a href="#jian-cha-mysql-yuan-shi-fou-an-zhuang-cheng-gong" class="header-anchor"></a><span id="jian-cha-mysql-yuan-shi-fou-an-zhuang-cheng-gong">检查MySql源是否安装成功</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; yum repolist enabled | grep &quot;mysql.*-community.*&quot;</span><br></pre></td></tr></table></figure>
-<h3><a href="#kai-shi-an-zhuang-mysql" class="header-anchor"></a><span id="kai-shi-an-zhuang-mysql">开始安装MySql</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; yum install mysql-community-server</span><br></pre></td></tr></table></figure>
-<h3><a href="#qi-dong-mysql-fu-wu-qi" class="header-anchor"></a><span id="qi-dong-mysql-fu-wu-qi">启动MySql服务器</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; systemctl start mysqld</span><br></pre></td></tr></table></figure>
-<h3><a href="#jian-cha-mysql-qi-dong-zhuang-tai" class="header-anchor"></a><span id="jian-cha-mysql-qi-dong-zhuang-tai">检查MySql启动状态</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell&gt; systemctl status mysqld</span><br></pre></td></tr></table></figure>
-<h3><a href="#she-ji-sui-ji-xi-tong-kai-ji-qi-dong" class="header-anchor"></a><span id="she-ji-sui-ji-xi-tong-kai-ji-qi-dong">设计随机系统开机启动</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable mysqld</span><br></pre></td></tr></table></figure>
-<h3><a href="#cha-kan-mysql-mo-ren-mi-ma" class="header-anchor"></a><span id="cha-kan-mysql-mo-ren-mi-ma">查看MySql默认密码</span></h3><p>安装并且启动后在/var/log/mysqld.log文件中生成一个随机的默认密码。我们使用此默认密码修改我们MySql数据库的密码；</p>
-<p>centos7通过yum装完mysql，找不到root密码，网上文章都说了一条指令</p>
+<h3><a href="#fang-fa-yi-tong-guo-chu-shi-mi-ma" class="header-anchor"></a><span id="fang-fa-yi-tong-guo-chu-shi-mi-ma">方法一：通过初始密码</span></h3><p>找回安装是的初始密码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &apos;temporary password&apos; /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
-<p>但是我的mysqld.log中根本没有temporary password，折腾了半天才找到解决方案，相信有小伙伴会遇到一样的问题，贴出来给大家参考：</p>
-<p>1.删除原来安装过的mysql残留的数据（这一步非常重要，问题就出在这）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /var/lib/mysql</span><br></pre></td></tr></table></figure>
-<p>2.重启mysqld服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure>
-<p>3.再去找临时密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &apos;temporary password&apos; /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
-<h3><a href="#hou-ji" class="header-anchor"></a><span id="hou-ji">后记</span></h3><p>本教程适用于MySql5.7以上的版本；</p>
+<h3><a href="#fang-fa-er-shi-yong-cao-zuo-xi-tong" class="header-anchor"></a><span id="fang-fa-er-shi-yong-cao-zuo-xi-tong">方法二：使用操作系统</span></h3><p>使用操作系统账号和密码，进行修改密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、mysql -uroot -p</span><br><span class="line"></span><br><span class="line">2、输入你的centos的密码</span><br><span class="line"></span><br><span class="line">3、UPDATE mysql.user SET authentication_string = PASSWORD(&apos;MyNewPassword&apos;) WHERE User = &apos;root&apos; AND Host = &apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
+<p>注：如果显示 ERROR 1819 (HY000): Your password does not satisfy the current policy requirements，说明你的密码不符合安全要求，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4、FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5、quit;</span><br></pre></td></tr></table></figure>
+<h3><a href="#fang-fa-san-qiang-zhi-jin-xing-xiu-gai-mi-ma" class="header-anchor"></a><span id="fang-fa-san-qiang-zhi-jin-xing-xiu-gai-mi-ma">方法三：强制进行修改密码</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1、systemctl stop mysqld</span><br><span class="line"></span><br><span class="line">2、systemctl set-environment MYSQLD_OPTS=&quot;--skip-grant-tables&quot;</span><br><span class="line"></span><br><span class="line">3、systemctl start mysqld</span><br><span class="line"></span><br><span class="line">4、mysql -u root</span><br><span class="line"></span><br><span class="line">5、UPDATE mysql.user SET authentication_string = PASSWORD(&apos;MyNewPassword&apos;) WHERE User = &apos;root&apos; AND Host = &apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
+<p>注：如果显示 ERROR 1819 (HY000): Your password does not satisfy the current policy requirements，说明你的密码不符合安全要求，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">6、FLUSH PRIVILEGES;</span><br><span class="line"></span><br><span class="line">7、quit;</span><br></pre></td></tr></table></figure>
 
         </div>
         <p class="post-revise-info">
-            Revised on <span class="date">2019/08/20 20:41:42</span> by 阿卜
+            Revised on <span class="date">2019/08/20 21:21:03</span> by 阿卜
         </p>
         
         <!-- 上一篇/下一篇  -->
@@ -199,17 +185,12 @@
         <ul class="post-paginator">
             <li class="next">
                 
-                    <div class="nextSlogan">Next Post</div>
-                    <a href= "/2019/08/20/Linux服务器下使用Navcate远程连接Mysql数据库/" title= "Linux服务器下使用Navcate远程连接Mysql数据库">
-                        Linux服务器下使用Navcate远程连接Mysql数据库
-                    </a>
-                
             </li>
             <li class="previous">
                 
                     <div class="prevSlogan">Previous Post</div>
-                    <a href= "/2019/08/16/如何找回微信小程序源码/" title= "如何找回微信小程序源码？2019年微信小程序反编译最新教程">
-                        如何找回微信小程序源码？2019年微信小程序反编译最新教程
+                    <a href= "/2019/08/20/Linux服务器下使用Navcate远程连接Mysql数据库/" title= "Linux服务器下使用Navcate远程连接Mysql数据库">
+                        Linux服务器下使用Navcate远程连接Mysql数据库
                     </a>
                 
             </li>
