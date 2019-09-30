@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="阿卜">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="Camtasia安装教程"/>
+  <meta property="og:title" content="SQL 去掉某字段括号中的值"/>
   <meta property="og:description" content="阿卜个人博客" />
   <meta property="og:site_name" content="Rahman&#39;s Blog"/>
   <meta property="og:type" content="article" />
@@ -55,7 +55,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Camtasia安装教程</p>
+          <p class="title">SQL 去掉某字段括号中的值</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -128,7 +128,7 @@
           <!-- Date -->
           <span class="date-time info">
             On <span class="date">2019/09/30</span>
-            <span class="time">13:20:08</span>
+            <span class="time">14:20:08</span>
           </span>
           
           <!--  Categories  -->
@@ -144,25 +144,25 @@
             Tags: <!-- 文章内容页中的 Tags 部分 -->
 
 
-<a class="tag" href="/tags/软件教程/">#软件教程</a>
+<a class="tag" href="/tags/SQL/">#SQL</a>
 
 
           </div>
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>Camtasia教程（图片形式），希望能够帮到你<br><a id="more"></a></p>
+          <p>SQL 去掉某字段括号中的值<br><a id="more"></a></p>
 <div class="toc">
 
 <!-- toc -->
 <!-- tocstop -->
 </div>
 
-<p><img src="/images/IMG_2814.JPG" alt="安装教程"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">#SQL 去掉某字段括号中的值</span><br><span class="line"> #今天在数据库匹配数据的时候，发现一些数据存在别名，导致我的数据匹配不上。在这里记录分享一下</span><br><span class="line"></span><br><span class="line">#例如： 李钟硕 （Lee Jong Suk），这里我匹配的是 “李钟硕”</span><br><span class="line"></span><br><span class="line">#示例1:</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">reverse</span>(<span class="keyword">substring</span>(<span class="keyword">reverse</span>(<span class="keyword">Name</span>) ,<span class="keyword">charindex</span>(<span class="string">'('</span>,<span class="keyword">reverse</span>(<span class="keyword">Name</span>)) + <span class="number">1</span> , <span class="keyword">len</span>(<span class="keyword">Name</span>)))  <span class="keyword">FROM</span> T</span><br><span class="line"></span><br><span class="line">#示例<span class="number">2</span>:</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">reverse</span>(<span class="keyword">stuff</span>(<span class="keyword">reverse</span>(<span class="keyword">Name</span>), <span class="number">1</span>, <span class="keyword">charindex</span>(<span class="string">'('</span>, <span class="keyword">reverse</span>(<span class="keyword">Name</span>)), <span class="string">''</span>)) <span class="keyword">FROM</span> T</span><br><span class="line"></span><br><span class="line">#注意，如果去掉括号后，数据含有空格，别忘记去掉。</span><br><span class="line"></span><br><span class="line">#前后的空格，使用<span class="keyword">LTrim</span>和<span class="keyword">RTrim</span>即可，例如：<span class="keyword">LTrim</span>(<span class="keyword">RTrim</span>(字段))</span><br><span class="line"></span><br><span class="line">#中间的空格，使用<span class="keyword">replace</span>函数替换，例如：<span class="keyword">Replace</span>(字段,<span class="string">' '</span>,<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
 
         </div>
         <p class="post-revise-info">
-            Revised on <span class="date">2019/09/30 11:27:05</span> by 阿卜
+            Revised on <span class="date">2019/09/30 13:23:36</span> by 阿卜
         </p>
         
         <!-- 上一篇/下一篇  -->
@@ -170,17 +170,12 @@
         <ul class="post-paginator">
             <li class="next">
                 
-                    <div class="nextSlogan">Next Post</div>
-                    <a href= "/2019/09/30/sql怎么批量删除字符串中的前三个字符/" title= "sql怎么批量删除字符串中的前三个字符">
-                        sql怎么批量删除字符串中的前三个字符
-                    </a>
-                
             </li>
             <li class="previous">
                 
                     <div class="prevSlogan">Previous Post</div>
-                    <a href= "/2019/09/27/Linux常用命令笔记/" title= "Lniux常用命令笔记">
-                        Lniux常用命令笔记
+                    <a href= "/2019/09/30/sql怎么批量删除字符串中的前三个字符/" title= "sql怎么批量删除字符串中的前三个字符">
+                        sql怎么批量删除字符串中的前三个字符
                     </a>
                 
             </li>

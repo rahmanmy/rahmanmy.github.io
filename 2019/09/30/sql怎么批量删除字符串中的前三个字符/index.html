@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="阿卜">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="Camtasia安装教程"/>
+  <meta property="og:title" content="sql怎么批量删除字符串中的前三个字符"/>
   <meta property="og:description" content="阿卜个人博客" />
   <meta property="og:site_name" content="Rahman&#39;s Blog"/>
   <meta property="og:type" content="article" />
@@ -55,7 +55,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Camtasia安装教程</p>
+          <p class="title">sql怎么批量删除字符串中的前三个字符</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -128,7 +128,7 @@
           <!-- Date -->
           <span class="date-time info">
             On <span class="date">2019/09/30</span>
-            <span class="time">13:20:08</span>
+            <span class="time">14:20:08</span>
           </span>
           
           <!--  Categories  -->
@@ -144,25 +144,27 @@
             Tags: <!-- 文章内容页中的 Tags 部分 -->
 
 
-<a class="tag" href="/tags/软件教程/">#软件教程</a>
+<a class="tag" href="/tags/SQL/">#SQL</a>
 
 
           </div>
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>Camtasia教程（图片形式），希望能够帮到你<br><a id="more"></a></p>
+          <p>sql怎么批量删除字符串中的前三个字符<br><a id="more"></a></p>
 <div class="toc">
 
 <!-- toc -->
 <!-- tocstop -->
 </div>
 
-<p><img src="/images/IMG_2814.JPG" alt="安装教程"></p>
+
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#使用 SubString字符串截取函数</span><br><span class="line">SubString(string, int, int)</span><br><span class="line">#返回第一个参数中从第二个参数指定的位置开始、第三个参数指定的长度的子字符串。</span><br><span class="line">#然后用update set即可达到删除字符串的前两个字符的效果</span><br><span class="line">#sql</span><br><span class="line"><span class="keyword">update</span> <span class="keyword">table</span> <span class="keyword">set</span> <span class="keyword">name</span>= <span class="keyword">substring</span>(<span class="keyword">name</span>,<span class="number">3</span>,<span class="keyword">len</span>(<span class="keyword">name</span>)<span class="number">-2</span>);</span><br><span class="line">#解释：更新table表中name字段</span><br><span class="line">#substring(name,3,len(name)-2);表示返回从name字段的第三个字符之后的所有字符</span><br><span class="line">#效果就是删除前2个字符了</span><br><span class="line">#len(name)表示返回name字段的长度</span><br></pre></td></tr></table></figure>
 
         </div>
         <p class="post-revise-info">
-            Revised on <span class="date">2019/09/30 11:27:05</span> by 阿卜
+            Revised on <span class="date">2019/09/30 13:21:17</span> by 阿卜
         </p>
         
         <!-- 上一篇/下一篇  -->
@@ -171,16 +173,16 @@
             <li class="next">
                 
                     <div class="nextSlogan">Next Post</div>
-                    <a href= "/2019/09/30/sql怎么批量删除字符串中的前三个字符/" title= "sql怎么批量删除字符串中的前三个字符">
-                        sql怎么批量删除字符串中的前三个字符
+                    <a href= "/2019/09/30/SQL 去掉某字段括号中的值/" title= "SQL 去掉某字段括号中的值">
+                        SQL 去掉某字段括号中的值
                     </a>
                 
             </li>
             <li class="previous">
                 
                     <div class="prevSlogan">Previous Post</div>
-                    <a href= "/2019/09/27/Linux常用命令笔记/" title= "Lniux常用命令笔记">
-                        Lniux常用命令笔记
+                    <a href= "/2019/09/30/Comtasia安装教程/" title= "Camtasia安装教程">
+                        Camtasia安装教程
                     </a>
                 
             </li>

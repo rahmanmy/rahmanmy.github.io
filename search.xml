@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>SQL 去掉某字段括号中的值</title>
+      <link href="/2019/09/30/SQL%20%E5%8E%BB%E6%8E%89%E6%9F%90%E5%AD%97%E6%AE%B5%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E5%80%BC/"/>
+      <url>/2019/09/30/SQL%20%E5%8E%BB%E6%8E%89%E6%9F%90%E5%AD%97%E6%AE%B5%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E5%80%BC/</url>
+      
+        <content type="html"><![CDATA[<p>SQL 去掉某字段括号中的值<br><a id="more"></a></p><div class="toc"><!-- toc --><!-- tocstop --></div><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">#SQL 去掉某字段括号中的值</span><br><span class="line"> #今天在数据库匹配数据的时候，发现一些数据存在别名，导致我的数据匹配不上。在这里记录分享一下</span><br><span class="line"></span><br><span class="line">#例如： 李钟硕 （Lee Jong Suk），这里我匹配的是 “李钟硕”</span><br><span class="line"></span><br><span class="line">#示例1:</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">reverse</span>(<span class="keyword">substring</span>(<span class="keyword">reverse</span>(<span class="keyword">Name</span>) ,<span class="keyword">charindex</span>(<span class="string">'('</span>,<span class="keyword">reverse</span>(<span class="keyword">Name</span>)) + <span class="number">1</span> , <span class="keyword">len</span>(<span class="keyword">Name</span>)))  <span class="keyword">FROM</span> T</span><br><span class="line"></span><br><span class="line">#示例<span class="number">2</span>:</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">reverse</span>(<span class="keyword">stuff</span>(<span class="keyword">reverse</span>(<span class="keyword">Name</span>), <span class="number">1</span>, <span class="keyword">charindex</span>(<span class="string">'('</span>, <span class="keyword">reverse</span>(<span class="keyword">Name</span>)), <span class="string">''</span>)) <span class="keyword">FROM</span> T</span><br><span class="line"></span><br><span class="line">#注意，如果去掉括号后，数据含有空格，别忘记去掉。</span><br><span class="line"></span><br><span class="line">#前后的空格，使用<span class="keyword">LTrim</span>和<span class="keyword">RTrim</span>即可，例如：<span class="keyword">LTrim</span>(<span class="keyword">RTrim</span>(字段))</span><br><span class="line"></span><br><span class="line">#中间的空格，使用<span class="keyword">replace</span>函数替换，例如：<span class="keyword">Replace</span>(字段,<span class="string">' '</span>,<span class="string">''</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 入门教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>sql怎么批量删除字符串中的前三个字符</title>
+      <link href="/2019/09/30/sql%E6%80%8E%E4%B9%88%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%89%8D%E4%B8%89%E4%B8%AA%E5%AD%97%E7%AC%A6/"/>
+      <url>/2019/09/30/sql%E6%80%8E%E4%B9%88%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%89%8D%E4%B8%89%E4%B8%AA%E5%AD%97%E7%AC%A6/</url>
+      
+        <content type="html"><![CDATA[<p>sql怎么批量删除字符串中的前三个字符<br><a id="more"></a></p><div class="toc"><!-- toc --><!-- tocstop --></div><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#使用 SubString字符串截取函数</span><br><span class="line">SubString(string, int, int)</span><br><span class="line">#返回第一个参数中从第二个参数指定的位置开始、第三个参数指定的长度的子字符串。</span><br><span class="line">#然后用update set即可达到删除字符串的前两个字符的效果</span><br><span class="line">#sql</span><br><span class="line"><span class="keyword">update</span> <span class="keyword">table</span> <span class="keyword">set</span> <span class="keyword">name</span>= <span class="keyword">substring</span>(<span class="keyword">name</span>,<span class="number">3</span>,<span class="keyword">len</span>(<span class="keyword">name</span>)<span class="number">-2</span>);</span><br><span class="line">#解释：更新table表中name字段</span><br><span class="line">#substring(name,3,len(name)-2);表示返回从name字段的第三个字符之后的所有字符</span><br><span class="line">#效果就是删除前2个字符了</span><br><span class="line">#len(name)表示返回name字段的长度</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 入门教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Camtasia安装教程</title>
       <link href="/2019/09/30/Comtasia%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/"/>
       <url>/2019/09/30/Comtasia%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
@@ -211,9 +261,9 @@
             
             <tag> Web </tag>
             
-            <tag> Web-lighter </tag>
-            
             <tag> jQuery </tag>
+            
+            <tag> Web-lighter </tag>
             
         </tags>
       
